@@ -41,7 +41,7 @@ const AccountForm: React.FC = () => {
     async (data: FormData) => {
       if (user) {
         const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/users/${user.id}`, {
-          // Make sure to include cookies with fetch
+          // Include cookies with fetch
           credentials: 'include',
           method: 'PATCH',
           body: JSON.stringify(data),
@@ -95,6 +95,16 @@ const AccountForm: React.FC = () => {
       <Message error={error} success={success} className={classes.message} />
       {!changePassword ? (
         <Fragment>
+          <Input
+            name="email"
+            label="Email Address"
+            required
+            register={register}
+            error={errors.email}
+            type="email"
+          />
+          <Input name="name" label="Name" register={register} error={errors.name} />
+
           <p>
             {'Change your account details below, or '}
             <button
@@ -106,15 +116,6 @@ const AccountForm: React.FC = () => {
             </button>
             {' to change your password.'}
           </p>
-          <Input
-            name="email"
-            label="Email Address"
-            required
-            register={register}
-            error={errors.email}
-            type="email"
-          />
-          <Input name="name" label="Name" register={register} error={errors.name} />
         </Fragment>
       ) : (
         <Fragment>
