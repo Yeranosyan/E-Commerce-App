@@ -4,6 +4,7 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+
 import { Footer, Media } from '../../../../payload/payload-types'
 import { inclusions, noHeaderFooterUrls } from '../../../constant'
 import { Button } from '../../Button'

@@ -5,9 +5,10 @@ import Link from 'next/link'
 
 import { Header as HeaderType } from '../../../../payload/payload-types'
 import { useAuth } from '../../../_providers/Auth'
+import { Button } from '../../Button'
 import { CartLink } from '../../CartLink'
 import { CMSLink } from '../../Link'
-import { Button } from '../../Button'
+
 import classes from './index.module.scss'
 
 export const HeaderNav: React.FC<{ header: HeaderType }> = ({ header }) => {

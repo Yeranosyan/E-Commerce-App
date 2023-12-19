@@ -9,6 +9,7 @@ COPY . .
 RUN yarn install
 RUN yarn build
 
+
 FROM base as runtime
 
 ENV NODE_ENV=production
